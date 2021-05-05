@@ -146,6 +146,17 @@ function init() {
         'MAGNORMOEN','SANDDALEN','VILSBERGVEGEN','LEIRSJØEN'
     ]);
 
+
+    //Hack until Amund updates HTML
+    const teigFilter = document.getElementById('teig-filter');
+    const optionMiddleNorth = document.createElement('option');
+    optionMiddleNorth.innerHTML = 'MIDT(NORD)';
+    teigFilter.appendChild(optionMiddleNorth);
+
+    const optionMiddleSouth = document.createElement('option');
+    optionMiddleSouth.innerHTML = 'MIDT(SØR)';
+    teigFilter.appendChild(optionMiddleSouth);
+
     const locationFilter = document.getElementById('location-filter');
 
     for (const crossing of crossings) {
