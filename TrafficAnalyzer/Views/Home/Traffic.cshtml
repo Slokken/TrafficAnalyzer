@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Traffic analyzer";
+}
+
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+<div id="ta-view" class="container-fluid">
+
+    <div class="col-md-2">
+        <button id="filedrop" type="button" class="btn btn-primary">Upload</button>
+        
+        <div class="form-group">
+            <label for="location-filter">Overgang:</label>
+            <select class="form-control ta-filter" id="location-filter">
+                <option></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="teig-filter">Teig:</label>
+            <select class="form-control ta-filter" id="teig-filter">
+                <option></option>
+                <option>NORD</option>
+                <option>MIDT</option>
+                <option>SØR</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="day-filter">Dag:</label>
+            <select class="form-control ta-filter" id="day-filter">
+                <option></option>
+                <option value="1">Mandag</option>
+                <option value="2">Tirsdag</option>
+                <option value="3">Onsdag</option>
+                <option value="4">Torsdag</option>
+                <option value="5">Fredag</option>
+                <option value="6">Lørdag</option>
+                <option value="0">Søndag</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="date-from-filter">Dato fra:</label>
+            <input id="date-from-filter" class="form-control ta-filter" placeholder="yyyy-mm-dd hh:mm" />
+        </div>
+
+        <div class="form-group">
+            <label for="date-to-filter">Date til:</label>
+            <input id="date-to-filter" class="form-control ta-filter" placeholder="yyyy-mm-dd hh:mm"/>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div id="container-fluid">
+            <div id="ta-hourlygraph"></div>
+            <div id="ta-dailygraph"></div>
+            <div id="ta-weeklygraph"></div>
+        </div>
+    </div>
+</div>
