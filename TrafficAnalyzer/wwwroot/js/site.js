@@ -32,7 +32,11 @@ function init() {
                 });
             }
 
-            Plotly.react(weeklyGraph.selector, plotlyData);
+            const layout = {
+                title: 'Ukentlig'
+            };
+
+            Plotly.react(weeklyGraph.selector, plotlyData, layout);
         }
     };
 
@@ -63,7 +67,11 @@ function init() {
                 });
             }
 
-            Plotly.react(dailyGraph.selector, plotlyData);
+            const layout = {
+                title: 'Daglig'
+            };
+
+            Plotly.react(dailyGraph.selector, plotlyData, layout);
         }
     };
 
@@ -94,7 +102,11 @@ function init() {
                 });
             }
 
-            Plotly.react(hourlyGraph.selector, plotlyData);
+            const layout = {
+                title: 'Time for time'
+            };
+
+            Plotly.react(hourlyGraph.selector, plotlyData, layout);
         }
     };
 
