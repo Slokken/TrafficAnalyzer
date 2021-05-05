@@ -124,10 +124,16 @@ function init() {
         'SAGMOVEGEN', 'STØA KANAL', 
     ]);
 
-    const middleCrossings = new Set([
-        'HALSJØEN', 'PEISTORPET', 'JUVBERGET', 'FALL', 'POSSÅSEN', 'ROSALA', 'VARPAAVEGEN', 'GRUE', 'SJØVEGEN', 'HØKLINGEN',
-        'LINNA', 'LINNHEIM', 'MATHIASHEMVEGEN', 'MELLOMBRÅTEN', 'ROTNEMOEN', 'RIKSÅSEN'
+    const northMiddleCrossings = new Set([
+        'HALSJØEN', 'PEISTORPET', 'JUVBERGET', 'POSSÅSEN',  'HØKLINGEN', 'LINNA', 'LINNHEIM', 'MATHIASHEMVEGEN', 
     ]);
+
+    const southMiddleCrossings = new Set([
+        'FALL', 'ROSALA', 'VARPAAVEGEN', 'GRUE', 'SJØVEGEN', 'MELLOMBRÅTEN', 'ROTNEMOEN', 'RIKSÅSEN'
+    ]);
+
+    const middle = Array.from(northMiddleCrossings).concat(Array.from(southMiddleCrossings));
+    const middleCrossings = new Set(middle);
 
     const southernCrossings = new Set([
         'KVERNMOEN', 'LEBIKO', 'LARBEKKEN', 'MITANDERSFORS', 'HÅKERUDTOMTA', 'KJERRET', 'HAUGEN', 'SVARTDALEN', 'INGELSRUD', 'VESTMARKA',
@@ -165,6 +171,10 @@ function init() {
                 case 'NORD': result = result.filter(d => northernCrossings.has(d.sted));
                     break;
                 case 'MIDT': result = result.filter(d => middleCrossings.has(d.sted));
+                    break;
+                case 'MIDT(SØR)': result = result.filter(d => southMiddleCrossings.has(d.sted));
+                    break;
+                case 'MIDT(NORD)': result = result.filter(d => northMiddleCrossings.has(d.sted));
                     break;
                 case 'SØR': result = result.filter(d => southernCrossings.has(d.sted));
                     break;
@@ -258,7 +268,7 @@ function init() {
 
         for (const line of filteredHourly) {
             line.passeringer = parseInt(line.passeringer);
-            line.timestamp = ExcelDateToJSDate(line.time); //There is some weirdness in the Excel files. Sometimes we get a date as string, other times it's serialized 👍
+            line.timestamp = convertUTCDateToLocalDate(ExcelDateToJSDate(line.time)); //There is some weirdness in the Excel files. Sometimes we get a date as string, other times it's serialized 👍
             //line.timestamp = new Date(line.time);
         }
 
@@ -266,6 +276,12 @@ function init() {
 
     };
 
+    var convertUTCDateToLocalDate = function (date) {
+        var newDate = new Date(date);
+        newDate.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+        return newDate;
+    };
+    
     var createGraphs = function (weekly, daily, hourly) {
         createWeekGraph(weekly);
         createHourlyGraph(hourly);
