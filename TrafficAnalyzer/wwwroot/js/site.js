@@ -163,7 +163,13 @@ function init() {
     ]);
 
 
-    const allCrossings = Array.from(northernCrossings).concat(Array.from(southernCrossings)).concat(Array.from(middleCrossings));
+    const allCrossings = Array.from(northernCrossings)
+        .concat(Array.from(southernCrossings))
+        .concat(Array.from(middleCrossings))
+        .sort((a, b) => {
+            return a >= b ? 1 : -1;
+        });
+
     const crossings = new Set(allCrossings);
 
 
