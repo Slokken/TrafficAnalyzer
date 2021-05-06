@@ -113,16 +113,16 @@ function init() {
     
 
     const northernCrossings = new Set([
-        'VALDALEN', 'DREVSJØ', 'LINNES', 'STØA', 'FLERMOEN', 'BORVEGGEN', 'LANGFLOEN', 'BADSTUKNAPPEN',
+        'VALDALEN', 'DREVSJØ', 'LINNES', 'STØA', 'FLERMOEN', 'BORVEGGVEGEN', 'LANGFLOEN', 'BADSTUKNAPPEN',
         'SAGMOVEGEN', 'STØA KANAL'
     ]);
 
     const northMiddleCrossings = new Set([
-        'HALSJØEN', 'PEISTORPET', 'JUVBERGET', 'POSSÅSEN',  'HØKLINGEN', 'LINNA', 'LINNHEIM', 'MATHIASHEMVEGEN', 
+        'HALSJØEN', 'PEISTORPET', 'JUVBERGET', 'POSSÅSEN',  'HØKLINGEN', 'LINNA', 'LINNHEIM', 'MATHIASHEMVEGEN',
     ]);
 
     const southMiddleCrossings = new Set([
-        'FALL', 'ROSALA', 'VARPAAVEGEN', 'GRUE', 'SJØVEGEN', 'MELLOMBRÅTEN', 'ROTNEMOEN', 'RIKSÅSEN'
+        'FALL', 'ROSALA', 'VARPAAVEGEN', 'GRUE', 'SJØVEGEN', 'MELLOMBRATEN', 'ROTNEMOEN', 'RIKSÅSEN'
     ]);
 
     const middle = Array.from(northMiddleCrossings).concat(Array.from(southMiddleCrossings));
