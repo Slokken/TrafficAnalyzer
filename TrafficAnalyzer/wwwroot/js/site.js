@@ -110,18 +110,11 @@ function init() {
         }
     };
 
-    const crossings = new Set([
-        'VALDALSFJELLET', 'DREVSJØ', 'LINNES', 'STØA', 'FLERMOEN', 'BORVEGGEN', 'LANGFLOEN', 'BADSTUKNAPPEN',
-        'LINNA', 'LINNHEIM', 'MATHIASHEMVEGEN', 'FALL', 'GRUE', 'RIKSÅSEN', 'MITANDERSFORS', 'KJERRET',
-        'MAGNORMOEN', 'LEIRSJØEN', 'VESTMARKA', 'ROTNEMOEN', 'SAGMOVEGEN', 'STØA KANAL', 'POSSÅSEN',
-        'HØKLINGEN', 'ROSALA', 'VARPAAVEGEN', 'SJØVEGEN', 'LARBEKKEN', 'HÅKERUDTOMTA', 'HAUGEN', 'VILSBERGVEGEN',
-        'LEIRSJØEN', 'INGELSRUD', 'HALSJØEN', 'JUVBERGET', 'PEISTORPET', 'MELLOMBRÅTEN', 'KVERNMOEN', 'SVARTDALEN',
-        'SANDDALEN'
-    ]);
+    
 
     const northernCrossings = new Set([
         'VALDALSFJELLET', 'DREVSJØ', 'LINNES', 'STØA', 'FLERMOEN', 'BORVEGGEN', 'LANGFLOEN', 'BADSTUKNAPPEN',
-        'SAGMOVEGEN', 'STØA KANAL', 
+        'SAGMOVEGEN', 'STØA KANAL'
     ]);
 
     const northMiddleCrossings = new Set([
@@ -136,9 +129,13 @@ function init() {
     const middleCrossings = new Set(middle);
 
     const southernCrossings = new Set([
-        'KVERNMOEN', 'LEBIKO', 'LARBEKKEN', 'MITANDERSFORS', 'HÅKERUDTOMTA', 'KJERRET', 'HAUGEN', 'SVARTDALEN', 'INGELSRUD', 'VESTMARKA',
+        'KVERNMOEN', 'LEBIKO', 'LARBEKKEN', 'MITANDERSFORS', 'HÅKERUD-TOMTA', 'KJERRET', 'HAUGEN', 'SVARTDALEN', 'INGELSRUDVEGEN', 'VESTMARKA',
         'MAGNORMOEN','SANDDALEN','VILSBERGVEGEN','LEIRSJØEN'
     ]);
+
+
+    const allCrossings = Array.from(northernCrossings).concat(Array.from(southernCrossings)).concat(Array.from(middleCrossings));
+    const crossings = new Set(allCrossings);
 
 
     //Hack until Amund updates HTML
