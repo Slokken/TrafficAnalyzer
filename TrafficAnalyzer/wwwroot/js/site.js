@@ -113,7 +113,7 @@ function init() {
     
 
     const northernCrossings = new Set([
-        'VALDALSFJELLET', 'DREVSJØ', 'LINNES', 'STØA', 'FLERMOEN', 'BORVEGGEN', 'LANGFLOEN', 'BADSTUKNAPPEN',
+        'VALDALEN', 'DREVSJØ', 'LINNES', 'STØA', 'FLERMOEN', 'BORVEGGEN', 'LANGFLOEN', 'BADSTUKNAPPEN',
         'SAGMOVEGEN', 'STØA KANAL'
     ]);
 
