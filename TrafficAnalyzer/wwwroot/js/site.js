@@ -151,7 +151,7 @@ function init() {
     ]);
 
     const southMiddleCrossings = new Set([
-        'FALL', 'ROSALA', 'VARPAAVEGEN', 'GRUE', 'SJØVEGEN', 'MELLOMBRATEN', 'ROTNEMOEN', 'RIKSÅSEN'
+        'FALL', 'ROSALA', 'VARPAAVEGEN', 'GRUE', 'SJØVEGEN', 'MELLOMBRATEN', 'ROTNEMOVEGEN', 'RIKSÅSEN'
     ]);
 
     const middle = Array.from(northMiddleCrossings).concat(Array.from(southMiddleCrossings));
