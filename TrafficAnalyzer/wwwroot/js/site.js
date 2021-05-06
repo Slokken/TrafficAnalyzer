@@ -10,6 +10,15 @@ function init() {
         allData: null,
         update: function (data = []) {
 
+            const selector = '#' + weeklyGraph.selector;
+            if (data.length === 0) {
+                $(selector).hide();
+                return;
+            }
+            else {
+                $(selector).show();
+            }
+
             const plotlyData = [];
             const graphData = {};
 
@@ -44,6 +53,16 @@ function init() {
         selector: 'ta-dailygraph',
         allData: null,
         update: function (data = []) {
+            const selector = '#' + dailyGraph.selector;
+            if (data.length === 0) {
+                $(selector).hide();
+                return;
+            }
+            else {
+                $(selector).show();
+            }
+
+
 
             const plotlyData = [];
             const graphData = {};
@@ -79,6 +98,16 @@ function init() {
         selector: 'ta-hourlygraph',
         allData: null,
         update: function (data = []) {
+            const selector = '#' + hourlyGraph.selector;
+            if (data.length === 0) {
+                $(selector).hide();
+                return;
+            }
+            else {
+                $(selector).show();
+            }
+
+
 
             const plotlyData = [];
             const graphData = {};
