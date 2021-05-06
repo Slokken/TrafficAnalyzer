@@ -36,9 +36,7 @@ function init() {
                 title: 'Ukentlig'
             };
 
-            const config = { responsive: true };
-
-            Plotly.react(weeklyGraph.selector, plotlyData, layout, config);
+            Plotly.react(weeklyGraph.selector, plotlyData, layout);
         }
     };
 
@@ -73,9 +71,7 @@ function init() {
                 title: 'Daglig'
             };
 
-            const config = { responsive: true };
-
-            Plotly.react(dailyGraph.selector, plotlyData, layout, config);
+            Plotly.react(dailyGraph.selector, plotlyData, layout);
         }
     };
 
@@ -110,9 +106,7 @@ function init() {
                 title: 'Time for time'
             };
 
-            const config = { responsive: true };
-
-            Plotly.react(hourlyGraph.selector, plotlyData, layout, config);
+            Plotly.react(hourlyGraph.selector, plotlyData, layout);
         }
     };
 
@@ -315,9 +309,14 @@ function init() {
             type: 'scatter'
         };
 
-        Plotly.newPlot(graphContainer, [weeklyGraphData], {
-            margin: { t: 0 }
-        });
+        Plotly.newPlot(graphContainer, [weeklyGraphData],
+            {
+                margin: { t: 0 }
+            },
+            {
+                responsive: true
+            }
+        );
 
         weeklyGraph.update(data);
     };
@@ -332,9 +331,14 @@ function init() {
             type: 'scatter'
         };
 
-        Plotly.newPlot(graphContainer, [graphData], {
-            margin: { t: 0 }
-        });
+        Plotly.newPlot(graphContainer, [graphData],
+            {
+                margin: { t: 0 }
+            },
+            {
+                responsive: true
+            }
+        );
 
         dailyGraph.update(data);
     };
@@ -349,9 +353,14 @@ function init() {
             type: 'scatter'
         };
 
-        Plotly.newPlot(graphContainer, [graphData], {
-            margin: { t: 0 }
-        });
+        Plotly.newPlot(graphContainer, [graphData],
+            {
+                margin: { t: 0 }
+            },
+            {
+                responsive: true
+            }
+        );
 
          hourlyGraph.update(data);
     };
